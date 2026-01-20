@@ -1,0 +1,170 @@
+.purchase-section {
+  background: white;
+}
+
+.purchase-options {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  max-width: 900px;
+  margin: 0 auto 40px;
+}
+
+.purchase-option {
+  background: #f8f9fa;
+  padding: 40px 30px;
+  border-radius: 20px;
+  text-align: center;
+  cursor: pointer;
+  border: 3px solid transparent;
+  transition: border-color 0.2s, transform 0.2s;
+  position: relative;
+}
+
+.purchase-option:hover {
+  border-color: #ddd;
+}
+
+.purchase-option.selected {
+  border-color: #667eea;
+  background: linear-gradient(135deg, #667eea08 0%, #764ba208 100%);
+}
+
+.purchase-option.popular {
+  transform: scale(1.05);
+}
+
+.popular-tag {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 5px 15px;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.purchase-option h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #2d3436;
+}
+
+.option-price {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #667eea;
+  margin-bottom: 10px;
+}
+
+.purchase-option p {
+  color: #636e72;
+}
+
+.purchase-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.quantity-selector {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.quantity-label,
+.total-label {
+  font-weight: 500;
+  color: #636e72;
+}
+
+.qty-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #f8f9fa;
+  font-size: 1.5rem;
+  color: #2d3436;
+  transition: background 0.2s;
+}
+
+.qty-btn:hover {
+  background: #e9ecef;
+}
+
+.quantity-value {
+  font-size: 1.25rem;
+  font-weight: 600;
+  min-width: 40px;
+  text-align: center;
+}
+
+.purchase-total {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.total-amount {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2d3436;
+}
+
+.checkout-btn {
+  display: block;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto 40px;
+  padding: 18px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border-radius: 30px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.checkout-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+}
+
+.purchase-guarantees {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.guarantee {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #636e72;
+}
+
+.guarantee .icon {
+  font-size: 1.3rem;
+}
+
+@media (max-width: 768px) {
+  .purchase-options {
+    grid-template-columns: 1fr;
+  }
+
+  .purchase-option.popular {
+    transform: none;
+  }
+
+  .purchase-controls {
+    gap: 30px;
+  }
+}
