@@ -1,5 +1,5 @@
 import './Header.css';
-import { useVar, useSet } from 'orbitcode';
+import { useVar } from 'orbitcode';
 
 interface HeaderProps {
   brandName?: string;
