@@ -1,24 +1,24 @@
-import './ProductHero.css';
-import { useVar } from 'orbitcode';
+import './ProductHero.css'
+import { useVar } from 'orbitcode'
 
 interface ProductHeroProps {
-  productName?: string;
-  tagline?: string;
-  price?: number;
-  originalPrice?: number;
+  productName?: string
+  tagline?: string
+  price?: number
+  originalPrice?: number
 }
 
 function ProductHero({
   productName = 'Premium Widget Pro',
-  tagline = 'The last widget you\'ll ever need. Crafted with precision, designed for excellence.',
+  tagline = "The last widget you'll ever need. Crafted with precision, designed for excellence.",
   price = 99,
-  originalPrice = 149
+  originalPrice = 149,
 }: ProductHeroProps) {
-  const [cartCount, setCartCount] = useVar<number>('cartCount', 0);
+  const [cartCount, setCartCount] = useVar<number>('cartCount', 0)
 
   const handleAddToCart = () => {
-    setCartCount(cartCount + 1);
-  };
+    setCartCount(cartCount + 1)
+  }
 
   return (
     <section className="product-hero">
@@ -65,12 +65,12 @@ function ProductHero({
         </div>
       </div>
     </section>
-  );
+  )
 }
 
 // Default export renders component in isolation for preview
 export default function ProductHeroPreview() {
-  return <ProductHero />;
+  return <ProductHero />
 }
 
-export { ProductHero };
+export { ProductHero }

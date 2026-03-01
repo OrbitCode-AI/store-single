@@ -1,16 +1,16 @@
-import './Purchase.css';
-import { useVar } from 'orbitcode';
+import './Purchase.css'
+import { useVar } from 'orbitcode'
 
 interface PurchaseOption {
-  id: string;
-  name: string;
-  price: number;
-  description: string;
-  popular?: boolean;
+  id: string
+  name: string
+  price: number
+  description: string
+  popular?: boolean
 }
 
 interface PurchaseProps {
-  options?: PurchaseOption[];
+  options?: PurchaseOption[]
 }
 
 const defaultOptions: PurchaseOption[] = [
@@ -18,33 +18,33 @@ const defaultOptions: PurchaseOption[] = [
     id: 'basic',
     name: 'Basic',
     price: 79,
-    description: 'Perfect for getting started'
+    description: 'Perfect for getting started',
   },
   {
     id: 'pro',
     name: 'Pro',
     price: 99,
     description: 'Most popular choice',
-    popular: true
+    popular: true,
   },
   {
     id: 'premium',
     name: 'Premium',
     price: 149,
-    description: 'Everything included'
-  }
-];
+    description: 'Everything included',
+  },
+]
 
 function Purchase({ options = defaultOptions }: PurchaseProps) {
-  const [selectedOption, setSelectedOption] = useVar<string>('selectedPurchaseOption', 'pro');
-  const [quantity, setQuantity] = useVar<number>('purchaseQuantity', 1);
-  const [cartCount, setCartCount] = useVar<number>('cartCount', 0);
+  const [selectedOption, setSelectedOption] = useVar<string>('selectedPurchaseOption', 'pro')
+  const [quantity, setQuantity] = useVar<number>('purchaseQuantity', 1)
+  const [cartCount, setCartCount] = useVar<number>('cartCount', 0)
 
-  const selected = options.find(opt => opt.id === selectedOption) || options[0];
+  const selected = options.find(opt => opt.id === selectedOption) || options[0]
 
   const handleAddToCart = () => {
-    setCartCount(cartCount + quantity);
-  };
+    setCartCount(cartCount + quantity)
+  }
 
   return (
     <section id="purchase" className="purchase-section">
@@ -52,12 +52,11 @@ function Purchase({ options = defaultOptions }: PurchaseProps) {
         <h2>Choose Your Package</h2>
 
         <div className="purchase-options">
-          {options.map((option) => (
+          {options.map(option => (
             <div
               key={option.id}
               className={`purchase-option ${selectedOption === option.id ? 'selected' : ''} ${option.popular ? 'popular' : ''}`}
-              onClick={() => setSelectedOption(option.id)}
-            >
+              onClick={() => setSelectedOption(option.id)}>
               {option.popular && <div className="popular-tag">Most Popular</div>}
               <h3>{option.name}</h3>
               <div className="option-price">${option.price}</div>
@@ -69,17 +68,11 @@ function Purchase({ options = defaultOptions }: PurchaseProps) {
         <div className="purchase-controls">
           <div className="quantity-selector">
             <span className="quantity-label">Quantity:</span>
-            <button
-              className="qty-btn"
-              onClick={() => setQuantity(Math.max(1, quantity - 1))}
-            >
+            <button className="qty-btn" onClick={() => setQuantity(Math.max(1, quantity - 1))}>
               −
             </button>
             <span className="quantity-value">{quantity}</span>
-            <button
-              className="qty-btn"
-              onClick={() => setQuantity(quantity + 1)}
-            >
+            <button className="qty-btn" onClick={() => setQuantity(quantity + 1)}>
               +
             </button>
           </div>
@@ -110,12 +103,12 @@ function Purchase({ options = defaultOptions }: PurchaseProps) {
         </div>
       </div>
     </section>
-  );
+  )
 }
 
 // Default export renders component in isolation for preview
 export default function PurchasePreview() {
-  return <Purchase />;
+  return <Purchase />
 }
 
-export { Purchase };
+export { Purchase }

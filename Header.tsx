@@ -1,24 +1,25 @@
-import './Header.css';
-import { useVar } from 'orbitcode';
+import './Header.css'
+import { useVar } from 'orbitcode'
 
 interface HeaderProps {
-  brandName?: string;
+  brandName?: string
 }
 
 function Header({ brandName = 'ProductName' }: HeaderProps) {
-  const [cartCount] = useVar<number>('cartCount', 0);
-  const [menuOpen, setMenuOpen] = useVar<boolean>('menuOpen', false);
+  const [cartCount] = useVar<number>('cartCount', 0)
+  const [menuOpen, setMenuOpen] = useVar<boolean>('menuOpen', false)
 
   return (
     <header className="store-header">
       <div className="header-container">
-        <a href="#" className="brand">{brandName}</a>
+        <a href="#" className="brand">
+          {brandName}
+        </a>
 
         <button
           className="mobile-menu-btn"
           onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Toggle menu"
-        >
+          aria-label="Toggle menu">
           ☰
         </button>
 
@@ -36,7 +37,7 @@ function Header({ brandName = 'ProductName' }: HeaderProps) {
         </div>
       </div>
     </header>
-  );
+  )
 }
 
 // Default export renders component in isolation for preview
@@ -45,7 +46,7 @@ export default function HeaderPreview() {
     <div className="preview-container">
       <Header brandName="Premium Widget" />
     </div>
-  );
+  )
 }
 
-export { Header };
+export { Header }

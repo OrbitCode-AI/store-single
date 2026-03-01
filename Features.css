@@ -21,7 +21,9 @@
   padding: 40px 30px;
   border-radius: 15px;
   text-align: center;
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
 }
 
 .feature-card:hover {

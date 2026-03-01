@@ -53,8 +53,13 @@
 }
 
 @keyframes float {
-  0%, 100% { transform: rotateY(-15deg) rotateX(10deg) translateY(0); }
-  50% { transform: rotateY(-15deg) rotateX(10deg) translateY(-20px); }
+  0%,
+  100% {
+    transform: rotateY(-15deg) rotateX(10deg) translateY(0);
+  }
+  50% {
+    transform: rotateY(-15deg) rotateX(10deg) translateY(-20px);
+  }
 }
 
 .badge {
@@ -136,7 +141,9 @@
   border-radius: 30px;
   font-size: 1.1rem;
   font-weight: 600;
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
 }
 
 .btn-primary:hover {
@@ -152,7 +159,9 @@
   font-size: 1.1rem;
   font-weight: 600;
   border: 2px solid rgba(255, 255, 255, 0.5);
-  transition: background 0.2s, border-color 0.2s;
+  transition:
+    background 0.2s,
+    border-color 0.2s;
 }
 
 .btn-secondary:hover {

@@ -1,11 +1,11 @@
-import './App.css';
-import Header from './Header';
-import ProductHero from './ProductHero';
-import Features from './Features';
-import Gallery from './Gallery';
-import Reviews from './Reviews';
-import Purchase from './Purchase';
-import Footer from './Footer';
+import './App.css'
+import Header from './Header'
+import ProductHero from './ProductHero'
+import Features from './Features'
+import Gallery from './Gallery'
+import Reviews from './Reviews'
+import Purchase from './Purchase'
+import Footer from './Footer'
 
 function App() {
   return (
@@ -20,7 +20,7 @@ function App() {
       </main>
       <Footer />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

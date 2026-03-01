@@ -1,27 +1,30 @@
-import './Gallery.css';
-import { useVar } from 'orbitcode';
+import './Gallery.css'
+import { useVar } from 'orbitcode'
 
 interface GalleryImage {
-  id: string;
-  color: string;
-  label: string;
+  id: string
+  color: string
+  label: string
 }
 
 interface GalleryProps {
-  images?: GalleryImage[];
+  images?: GalleryImage[]
 }
 
 const defaultImages: GalleryImage[] = [
   { id: '1', color: '#667eea', label: 'Front View' },
   { id: '2', color: '#764ba2', label: 'Side View' },
   { id: '3', color: '#f093fb', label: 'Back View' },
-  { id: '4', color: '#f5576c', label: 'Detail Shot' }
-];
+  { id: '4', color: '#f5576c', label: 'Detail Shot' },
+]
 
 function Gallery({ images = defaultImages }: GalleryProps) {
-  const [selectedImage, setSelectedImage] = useVar<string>('selectedGalleryImage', images[0]?.id || '1');
+  const [selectedImage, setSelectedImage] = useVar<string>(
+    'selectedGalleryImage',
+    images[0]?.id || '1',
+  )
 
-  const currentImage = images.find(img => img.id === selectedImage) || images[0];
+  const currentImage = images.find(img => img.id === selectedImage) || images[0]
 
   return (
     <section id="gallery" className="gallery-section">
@@ -36,13 +39,12 @@ function Gallery({ images = defaultImages }: GalleryProps) {
           </div>
 
           <div className="thumbnail-strip">
-            {images.map((image) => (
+            {images.map(image => (
               <button
                 key={image.id}
                 className={`thumbnail ${selectedImage === image.id ? 'active' : ''}`}
                 onClick={() => setSelectedImage(image.id)}
-                style={{ background: image.color }}
-              >
+                style={{ background: image.color }}>
                 <span className="sr-only">{image.label}</span>
               </button>
             ))}
@@ -65,12 +67,12 @@ function Gallery({ images = defaultImages }: GalleryProps) {
         </div>
       </div>
     </section>
-  );
+  )
 }
 
 // Default export renders component in isolation for preview
 export default function GalleryPreview() {
-  return <Gallery />;
+  return <Gallery />
 }
 
-export { Gallery };
+export { Gallery }
